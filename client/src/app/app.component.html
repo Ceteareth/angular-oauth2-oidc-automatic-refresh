@@ -1,0 +1,40 @@
+<div class="content" role="main">
+    <span *ngIf='accessTokenLifeTime'>
+        Expires in {{accessTokenLifeTime | number: '2.0-0'}}
+    </span>
+    <span *ngIf='!accessTokenLifeTime'>
+        Token expired or invalid
+    </span>
+    <span>
+        Automatic refresh is {{refreshActive ? 'active' : 'inactive'}}
+    </span>
+    <div class="card-container">
+        <a class="card" (click)='login()'>
+            <span>Login</span>
+
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg> </a>
+
+        <a class="card" (click)='logout()'>
+            <span>Logout</span>
+
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+
+        <a class="card" (click)='start()'>
+            <span>Start automatic refresh</span>
+
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+
+        <a class="card" (click)='stop()'>
+            <span>Stop automatic refresh</span>
+
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" /></svg>
+        </a>
+    </div>
+
+</div>
